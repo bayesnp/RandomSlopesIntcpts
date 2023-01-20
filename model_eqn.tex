@@ -1,0 +1,52 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+%
+% Above directives are recognized by TeXShop.  See detailed explanation
+% on these and more:
+% https://tex.stackexchange.com/questions/78101/when-and-why-should-i-use-tex-ts-program-and-tex-encoding
+%
+%%%% Place this as the first line to force TeXShop to save file as UTF-i
+\documentclass{article}
+\usepackage{amsmath}     % higher math, aligned math equations
+\usepackage{mathtools}   % aligned columns in bracketed \bmatrix in amsmath
+\usepackage{amssymb}
+\usepackage{bm}          % bm gives you nice-looking \boldsymbol{y}
+\begin{document}
+$$
+\begin{aligned}
+\mathrm{Level 1:} \phantom{2cm} & \\
+        y_{i[t]} &\sim \mathrm{N}\bigl(\alpha_{i} + 
+        \beta_{i} \mathrm{Months}_{i[t]}, \sigma^2_{\epsilon}\bigr),\ 
+    \mathrm{for}\ i = 1, \dots, n;\quad  t = 1, \dots, 4  \\
+\mathrm{Level 2:} \phantom{2cm} & \\
+    \begin{pmatrix}
+    \alpha_{i}\\
+    \beta_{i}
+    \end{pmatrix} &\sim \mathrm{N} \Biggl(
+      \begin{pmatrix}
+       \mu_{\alpha}\\
+       \mu_{\beta}
+      \end{pmatrix}\! \!,
+      \Omega  
+      \Biggr), \\
+    \mathrm{where}& \\
+        \mu_{\alpha} &=
+        \gamma_{00} +
+        \gamma_{01} \mathrm{Age}_i + 
+        \gamma_{02} \mathrm{Age}^2_i + 
+        \gamma_{03} \mathrm{survivor}_i + \\
+        & \qquad \qquad 
+        \gamma_{04} \mathrm{survivor}_i\cdot \mathrm{Age}_i+ 
+        \gamma_{05} \mathrm{survivor}_i\cdot \mathrm{Age}^2_i 
+        \\
+        \mu_{\beta} &= 
+        \gamma_{10} + \gamma_{11} \mathrm{survivor}_i + 
+        \gamma_{12} \mathrm{age4Q}_i + %
+        \gamma_{13} \mathrm{survivor}\cdot \mathrm{age4Q}_i \\
+     \Omega &= \begin{pmatrix}
+        \sigma^2_\alpha & \rho \sigma_\alpha \sigma_{\beta} \\
+        \rho \sigma_\alpha \sigma_\beta & \sigma^2_\beta
+       \end{pmatrix}
+\end{aligned}
+$$
+\end{document}
