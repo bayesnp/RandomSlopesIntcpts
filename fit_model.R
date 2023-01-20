@@ -1,3 +1,6 @@
+###
+# run this after gen_simulated_data.R
+###
 library('rstanarm')
 options(mc.cores = parallel::detectCores())
 
