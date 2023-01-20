@@ -1,5 +1,5 @@
 # RandomSlopesIntcpts
-This repository shows you how to fit a random intercepts, random slopes model using R.  The model equation is found in the 'model_eqn.svg' file.
+This repository shows you how to fit a random intercepts, random slopes model using R.  The model equation is found in the 'model_eqn.pdf' file.
 
 ## Step 1
 
