@@ -100,10 +100,8 @@ dfc$y <- rnorm(n = nrow(dfc), mean = dfc$y_mu, sd = epsilon)
 ###
 # Below is optional, to test fit a model with the newly simulated dfc.
 ###
-
 # library('rstanarm')
 # options(mc.cores = parallel::detectCores())
-
 # mod1 <- stan_lmer(y ~ ageC_enrl + I(ageC_enrl^2) + survivor + 
 	#ageC_enrl:survivor + I(ageC_enrl^2):survivor + time_months + 
 	#survivor:time_months + age4C:time_months + 
