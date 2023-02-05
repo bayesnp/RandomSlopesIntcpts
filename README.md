@@ -9,3 +9,8 @@ Download and run the 'gen_simulated_data.R' to generate a workable dataset.
 
 Run the 'fit_model.R' to fit the model.  This may require installing the rstanarm package.
 
+## Step 3
+
+Run the 'Fig_mod1.R' to plot the model-estimated gap between survivors and controls, like this:
+
+![Fig_mod1.svg](Fig_mod1.svg)
