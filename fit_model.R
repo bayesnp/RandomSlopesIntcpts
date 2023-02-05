@@ -1,5 +1,5 @@
 ###
-# run this after gen_simulated_data.R
+# run this after 'gen_simulated_data.R'
 ###
 library('rstanarm')
 options(mc.cores = parallel::detectCores())
@@ -9,6 +9,12 @@ mod1 <- stan_lmer(y ~ ageC_enrl + I(ageC_enrl^2) + survivor +
 	survivor:time_months + age4C:time_months + 
 	age4C:survivor:time_months + (1 + time_months | id), 
         chains = 4, warmup = 1000, thin = 5, iter=6000, data = dfc)
+# Next, print priors set by stan_lmer().  These may change in 
+# future versions so that it makes sense to keep a record of them.  
+# You can even set them explicitly, like the option
+# 'prior = default_prior_coef(family)', prior_intercept =, and
+# prior_covariance =.  See ?stan_lmer for details.
+prior_summary(mod1)
 
 # print fixed effects estimates
 summary(mod1, pars = c("ageC_enrl","I(ageC_enrl^2)","survivor",
